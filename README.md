@@ -18,7 +18,7 @@ vi .production.env
 ## Add the port number to the env file. (.production.env or .development.env)
 
 ```bash
-PORT=7383
+PORT=7373
 ```
 
 ## Run the app in developer mode.
