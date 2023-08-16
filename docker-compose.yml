@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  app:
+    container_name: nest-app
+    build: .
+    tty: true
+    restart: always
+    ports:
+      - '7373:7373'
+    depends_on:
+      - my-redis
+    environment:
+      - TZ=Asia/Tokyo
+    logging:
+      driver: json-file
+      options:
+        max-size: 8m
+        max-file: '5'
+  my-redis:
+    container_name: my-redis
+    image: 'redis:7.0.12-alpine'
+    command: --port 6380
+    ports:
+      - 6380:6380
+    volumes:
+      - ./redis/data:/data
+    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: 8m
+        max-file: '5'
