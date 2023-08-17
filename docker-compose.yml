@@ -21,7 +21,7 @@ services:
   my-redis:
     container_name: my-redis
     image: 'redis:7.0.12-alpine'
-    command: --port ${REDIS_PORT}
+    command: --port ${REDIS_PORT} --requirepass ${REDIS_PASSWORD}
     ports:
       - '${REDIS_PORT}:${REDIS_PORT}'
     volumes:

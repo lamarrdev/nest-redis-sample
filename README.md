@@ -13,6 +13,7 @@ $ touch ./src/config/env/.production.env
 ```
 
 ## Add the port number to the env file. (.production.env or .development.env)
+
 ```bash
 $ vi ./src/config/env/.development.env
 $ vi ./src/config/env/.production.env
@@ -21,6 +22,7 @@ $ vi ./src/config/env/.production.env
 ```bash
 APP_PORT=7373
 REDIS_PORT=6380
+REDIS_PASSWORD=RedisPassword
 ```
 
 ## Run the app in developer mode.

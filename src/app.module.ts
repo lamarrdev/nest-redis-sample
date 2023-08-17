@@ -21,8 +21,8 @@ import { validationSchema } from './config/validationSchema';
       config: {
         // host: 'localhost',
         host: 'my-redis',
-        port: 6380,
-        password: 'Cnrrnrhd3',
+        port: parseInt(process.env.REDIS_PORT),
+        password: process.env.REDIS_PASSWORD,
       },
     }),
   ],
