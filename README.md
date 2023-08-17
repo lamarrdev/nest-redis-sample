@@ -21,6 +21,8 @@ $ vi ./src/config/env/.production.env
 
 ```bash
 APP_PORT=7373
+
+REDIS_HOST=my-redis
 REDIS_PORT=6380
 REDIS_PASSWORD=RedisPassword
 ```

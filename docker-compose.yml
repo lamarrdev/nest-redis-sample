@@ -19,7 +19,7 @@ services:
         max-size: 8m
         max-file: '5'
   my-redis:
-    container_name: my-redis
+    container_name: ${REDIS_HOST}
     image: 'redis:7.0.12-alpine'
     command: --port ${REDIS_PORT} --requirepass ${REDIS_PASSWORD}
     ports:

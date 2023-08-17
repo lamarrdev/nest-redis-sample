@@ -19,8 +19,7 @@ import { validationSchema } from './config/validationSchema';
     RedisModule.forRoot({
       readyLog: true,
       config: {
-        // host: 'localhost',
-        host: 'my-redis',
+        host: process.env.REDIS_HOST,
         port: parseInt(process.env.REDIS_PORT),
         password: process.env.REDIS_PASSWORD,
       },
