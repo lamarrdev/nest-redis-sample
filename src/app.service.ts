@@ -8,7 +8,7 @@ export class AppService {
   constructor(@InjectRedis() private readonly client: Redis) {}
 
   async createData() {
-    await this.client.set('cat', '야옹야옹', 'EX', 10000);
+    await this.client.set('cat', 'meow meow', 'EX', 10000);
   }
 
   async readData(): Promise<string> {
@@ -19,7 +19,7 @@ export class AppService {
 
   async updateData() {
     await this.client.del(['cat']);
-    await this.client.set('cat', '야옹야옹꺄옹', 'EX', 10000);
+    await this.client.set('cat', 'Growl......', 'EX', 10000);
   }
 
   async deleteData() {
