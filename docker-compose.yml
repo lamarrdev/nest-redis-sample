@@ -6,11 +6,13 @@ services:
     tty: true
     restart: always
     ports:
-      - '7373:7373'
+      - '${APP_PORT}:${APP_PORT}'
     depends_on:
       - my-redis
     environment:
       - TZ=Asia/Tokyo
+    env_file:
+      - ./src/config/env/.production.env
     logging:
       driver: json-file
       options:
@@ -19,12 +21,14 @@ services:
   my-redis:
     container_name: my-redis
     image: 'redis:7.0.12-alpine'
-    command: --port 6380
+    command: --port ${REDIS_PORT}
     ports:
-      - 6380:6380
+      - '${REDIS_PORT}:${REDIS_PORT}'
     volumes:
       - ./redis/data:/data
     restart: always
+    env_file:
+      - ./src/config/env/.production.env
     logging:
       driver: json-file
       options:

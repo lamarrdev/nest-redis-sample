@@ -18,7 +18,8 @@ vi .production.env
 ## Add the port number to the env file. (.production.env or .development.env)
 
 ```bash
-PORT=7373
+APP_PORT=7373
+REDIS_PORT=6380
 ```
 
 ## Run the app in developer mode.
@@ -31,5 +32,5 @@ $ npm run start:dev
 ## Run the app in production mode.
 
 ```bash
-$ docker-compose up --build -d
+$ export $(grep -v '^#' ./src/config/env/.production.env | xargs); docker-compose up --build -d
 ```
